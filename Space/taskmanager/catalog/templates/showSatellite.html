@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h1>Show Satellite</h1>
+<form method="post">
+    <table border="5">
+        <tr>
+            <th class="tth">*</th>
+            <th class="tth">Name</th>
+            <th class="tth">Age</th>
+        </tr>
+        {% for i in Satellite%}
+
+        <tr>
+            <td><a href="{% url 'updateSatellite' %}?id={{i.id}}">Update</a></td>
+            <td>{{i.name}}</td>
+            <td>{{i.age}}</td>
+        </tr>
+
+        {% endfor%}
+    </table>
+</form>
+{% endblock %}

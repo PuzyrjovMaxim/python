@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    {% block title %}
+    <title>Главная страница</title>{% endblock %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+
+    <!-- ���������� ��������������� ������������ CSS ����� -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2">
+                {% block sidebar %}
+                <ul class="sidebar-nav">
+                    <li><a href="{% url 'index' %}">Главная</a></li><br>
+
+                    <li><a href="{% url 'showGalaxy' %}">Посмотреть галактики</a></li>
+                    <li><a href="{% url 'createGalaxy' %}">Добавить галактику</a></li><br>
+
+                    <li><a href="{% url 'showPlanet' %}">Посмотреть планеты</a></li>
+                    <li><a href="{% url 'createPlanet' %}">Добавить планету</a></li><br>
+
+                    <li><a href="{% url 'showSatellite' %}">Посмотреть спутники</a></li>
+                    <li><a href="{% url 'createSatellite' %}">Добавить спутника</a></li>
+                </ul>
+                {% endblock %}
+            </div>
+            <div class="col-sm-10 ">{% block content %}{% endblock %}</div>
+        </div>
+    </div>
+</body>
+</html>

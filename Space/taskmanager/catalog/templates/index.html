@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h1>Space</h1>
+
+<p>Encyclopedia of Space.</p>
+
+<p>Количество известных космических тел:</p>
+<ul>
+    <li><strong>Galaxy:</strong> {{ num_galaxy }}</li>
+    <li><strong>Planet:</strong> {{ num_planet }}</li>
+    <li><strong>Satellite:</strong> {{ num_satellite }}</li>
+</ul>
+{% endblock %}
